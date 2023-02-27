@@ -18,12 +18,12 @@ The project comprises several stages:
 
 **Reports and Dashboards:** Generating reports and CEO dashboards using POWER BI.
 
-<ins>Step 1 - ERD:</ins>
+### <ins>Step 1 - ERD:</ins>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/105520248/221418333-9ccfed41-e2a9-4f80-beae-6da033e8d6a0.png" width="700" height="700" />
 </p>
 
-<ins>Step 2 - The Relational Database:</ins>
+### <ins>Step 2 - The Relational Database:</ins>
 
 When converting the ERD diagram to a Relational Database, each entity depicted in the ERD diagram will be mapped to a distinct table in the database. The relationships between these entities is established by defining the foreign keys.
 <p align="center">
@@ -31,13 +31,13 @@ When converting the ERD diagram to a Relational Database, each entity depicted i
 </p>
 At this stage, I have created all of the required tables in SQL SERVER using the CREATE function and by defining the relevant fields and constraints, including primary keys, foreign keys, and data format constraints. 
 
-<sub>You can see all of the above in the "create tables and constrains" SQL file.</sub>
+*<sub>You can see all of the above in the "Create Tables And Constrains" SQL file.</sub>*
 
-<ins>Step 3 - generate synthetic data and load it into SQL SERVER:</ins>
+### <ins>Step 3 - generate synthetic data and load it into SQL SERVER:</ins>
 
-<sub>You can see the added Excle file named "Data". Each table from the tables indicated above is on a different sheet.</sub>
+*<sub>You can see the added Excle file named "Data". Each table from the tables indicated above is on a different sheet.</sub>*
 
-<ins>Step 4 - Developing intricate queries to examine the data and derive insights:</ins>
+### <ins>Step 4 - Developing intricate queries to examine the data and derive insights:</ins>
 
 At this stage, I have created a range of SQL queries that gradually increase in complexity.
 
@@ -55,7 +55,7 @@ And progressing to more advanced queries that use update statment and nested que
 <img src="https://user-images.githubusercontent.com/105520248/221422420-2b8dc217-aa08-4331-b04d-18c92ed767ad.png" width="450" height="250" />
 </p>
 
-<ins>Step 5 - Utilizing advanced SQL tools:</ins>
+### <ins>Step 5 - Utilizing advanced SQL tools:</ins>
 
 At this stage,  I have created multiple functions, Triggers and Stored Procedure that are designed for broader application and served to facilitate frequent operations.
 
@@ -90,7 +90,26 @@ The trigger updates this field whenever there is any change in the INCLUDES tabl
 
 **Trigger which uses Cursor**
 
+The most fascinating and intricate aspect of the project is this particular section. I developed a trigger that executes each time a new customer is added. The trigger utilizes a cursor to examine whether the newly added customer's password meets the predefined criteria for a strong password. If the password fails to meet these criteria, the trigger will automatically modify the password to ensure it satisfies the requirements of a strong password.
 
+To implement the trigger, various functions were necessary, each examining a different factor that determines password strength, such as the number of characters, inclusion of letters, numbers, and symbols. Moreover, I developed several functions that would randomly insert the required component in the password, for example, if the password did not contain a number, the function would insert a random number in a random location.
+
+*<sub>You can see all of the function uses this part in the "Validation Password Trigger" SQL file.</sub>*
+
+<sub>An example of a function that checks if a password contains numbers:</sub>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/105520248/221502961-4897ae61-731e-417e-ad4a-14468106262c.png" width="450" height="150" />
+</p>
+
+<sub>An example of a function that insert a random number in a random location:</sub>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/105520248/221503851-8df9db30-73db-4c05-8a7e-82a66e2d0467.png" width="450" height="300" />
+</p>
+
+<sub>The Trigger which use all the functions and the Cursor:</sub>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/105520248/221504772-8425aaed-71b5-4b0c-b94b-ac2d273cdcb6.png" width="450" height="700" />
+</p>
 
 **Stored Procedure**
 
@@ -106,9 +125,15 @@ This procedure is designed to run once a week through all products and update th
 <img src="https://user-images.githubusercontent.com/105520248/221437416-91f8b42f-3c76-4a8e-9ccc-783ee999d95a.png" width="450" height="250" />
 </p>
 
-<ins>Step 6 - Reports and Dashboards:</ins>
+*<sub>You can see all of the queries of step 4 and 5 in the "Queries And Advanced Tools" SQL file.</sub>*
 
-<sub>In order to create the report and the dashbord, I created a large number of VIEWS. You can find all of them in the "CREATE VIEW" SQL file.</sub>
+### <ins>Step 6 - Reports and Dashboards:</ins>
+
+In order to create the report and the dashbord, I have created a large number of VIEWS in a wide variety of aspects and perspectives. 
+
+Among other things - VIEW for displaying sales data per year and per quarter. VIEW for displaying customer segmentation (registered customers who have not placed an order), or a VIEW for displaying the most popular category in sales (the category from which they ordered the most), etc.
+
+*<sub>You can find all of them in the "Create View For Visual Tools" SQL file.</sub>*
 
 **Sales Report**
 
@@ -137,3 +162,6 @@ The CEO dashboard serves the purpose of presenting long-term view of the company
 <p align="center">
 <img src="https://user-images.githubusercontent.com/105520248/221439202-f7b7a94b-12ea-4612-87e3-b60857f26421.png" width="800" height="450" />
 </p>
+
+
+*<sub>You can see the Sales Report and the CEO Dashboard in attached files in POWER BI format. </sub>*
